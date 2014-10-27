@@ -3,7 +3,7 @@ Description=COW HTTP proxy service per-user service
 After=network.target
  
 [Service]
-ExecStart=/usr/bin/cow
+ExecStart=/usr/bin/meow
 Restart=on-abort
 
 [Install]

@@ -1,0 +1,42 @@
+# Maintainer: renzhn <renznn@gmail.com>
+pkgname=meow-proxy-git
+pkgver=1010.840420a
+pkgrel=1
+pkgdesc="MEOW is a fork of COW that uses whitelist mode"
+arch=('i686' 'x86_64' 'arm')
+url="https://github.com/renzhn/MEOW"
+license=('custom')
+depends=()
+makedepends=('go' 'mercurial' 'git')
+source=('meow@.service'
+        'meow_user.service'
+	'git://github.com/renzhn/MEOW.git')
+
+sha1sums=('fc782d7b2fbd76d0e76996147bf568ffe67bae2e'
+          'b2fed168ed41808332b40c7c48299174ec508a9d'
+          'SKIP')
+
+conflicts=(meow-proxy)
+
+_gitname=meow
+install=$pkgname.install
+
+pkgver() {
+        cd "${srcdir}/${_gitname}"
+        echo "$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
+}
+
+build() {
+	mkdir -p ${srcdir}/src/github.com/renzhn/MEOW
+        cd "${srcdir}/${_gitname}"
+	git --work-tree=${srcdir}/src/github.com/renzhn/MEOW checkout -f master
+	cd ${srcdir}/src/github.com/renzhn/MEOW
+	GOPATH=${srcdir} go get -v
+}
+
+package() {
+  mkdir -p $pkgdir/usr/bin
+  install -m755 $srcdir/bin/meow $pkgdir/usr/bin/meow
+  install -Dm644 meow@.service ${pkgdir}/usr/lib/systemd/system/meow@.service
+  install -Dm644 meow_user.service ${pkgdir}/usr/lib/systemd/user/meow.service
+}

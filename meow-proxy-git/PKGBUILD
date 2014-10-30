@@ -12,8 +12,8 @@ source=('meow@.service'
         'meow_user.service'
 	'git://github.com/renzhn/MEOW.git')
 
-sha1sums=('fc782d7b2fbd76d0e76996147bf568ffe67bae2e'
-          'b2fed168ed41808332b40c7c48299174ec508a9d'
+sha1sums=('bf9f1c5c58807e39c969d1ec5cb6535579f0dc92'
+          '4ab8d5afaf78c992bdd7c45a7fcd7dd4ae3875d5'
           'SKIP')
 
 conflicts=(meow-proxy)

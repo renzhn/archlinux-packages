@@ -8,10 +8,6 @@
 */pkg
 */src
 *.gz
-meow-proxy/rc
 
-phpdbg/phpdbg
-jcal-git/jcal
-ttysolitaire-git/tty-solitaire
+meow-proxy/rc
 meow-proxy-git/meow/
-saaghar-git/Saaghar/

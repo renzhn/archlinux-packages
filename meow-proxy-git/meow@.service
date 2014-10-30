@@ -1,5 +1,5 @@
 [Unit]
-Description=COW HTTP proxy service for %i
+Description=MEOW HTTP proxy service for %i
 After=network.target
  
 [Service]

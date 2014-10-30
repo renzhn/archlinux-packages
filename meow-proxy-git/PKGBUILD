@@ -2,7 +2,7 @@
 pkgname=meow-proxy-git
 pkgver=1010.840420a
 pkgrel=1
-pkgdesc="MEOW is a fork of COW that uses whitelist mode"
+pkgdesc="MEOW is a fork of MEOW that uses whitelist mode"
 arch=('i686' 'x86_64' 'arm')
 url="https://github.com/renzhn/MEOW"
 license=('custom')

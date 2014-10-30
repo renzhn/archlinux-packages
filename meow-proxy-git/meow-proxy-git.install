@@ -2,12 +2,12 @@ post_install() {
 
 cat << EOF
   The meow.service is only available for an available user  
-  Configuration sample can be found at : https://github.com/renzhn/MEOW/tree/master/doc/sample-config
+  Configuration sample can be found at : https://github.com/renzhn/meow/tree/master/doc/sample-config
 
 	mkdir -p ~/.meow	
-	wget https://raw.githubusercontent.com/renzhn/MEOW/master/doc/sample-config/rc
+	wget https://raw.githubusercontent.com/renzhn/meow/master/doc/sample-config/rc
  	
-	and edit listen and proxy settings. the document is in chineese :) 
+	and edit listen and proxy settings. the document is in chinese :) 
 
         for direct and block list, you can also edit ~/.meow/blocked and ~/.meow/direct
 EOF
